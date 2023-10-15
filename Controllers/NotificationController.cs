@@ -34,9 +34,7 @@ namespace NotifyApiMaui.Controllers
 
                 var delay = date - DateTime.Now;
 
-                if (delay.TotalSeconds <= 0) return BadRequest("Envio da mensagem cancelada devido ao atraso da requisição.");
-               
-                content.Notification.Body += $" * Detalhes: {date.Hour}:{date.Minute}:{date.Second}";
+                if (delay.TotalSeconds <= 0) return BadRequest("Envio da mensagem cancelada devido ao atraso da requisição.");                             
 
                 var timer = new Timer(async (_) =>
                 {

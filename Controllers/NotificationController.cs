@@ -31,8 +31,8 @@ namespace NotifyApiMaui.Controllers
             try
             {
                 var date = model.DateTimeOfNotification;
-
-                var delay = date - DateTime.Now;
+              
+                var delay = date - DateTime.Now.ToUniversalTime();
 
                 if (delay.TotalSeconds <= 0) return BadRequest("Envio da mensagem cancelada devido ao atraso da requisição.");                             
 
